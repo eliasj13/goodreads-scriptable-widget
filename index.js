@@ -91,7 +91,7 @@ app.get('/books', async (req, res) => {
 });
 
 // Route to return sample data for testing
-app.get('/testThree', async (req, res) => {
+app.get('/testThreeItems', async (req, res) => {
   const sampleBooks = [
     {
       title: "The Great Gatsby",

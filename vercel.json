@@ -12,7 +12,7 @@
       "dest": "index.js"
     },
     {
-    	"src": "/testThree",
+    	"src": "/testThreeItems",
     	"dest": "index.js"
     }
   ]
