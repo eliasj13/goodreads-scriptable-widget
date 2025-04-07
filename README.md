@@ -1,83 +1,111 @@
 # Goodreads Scriptable Widget
+A super simple widget designed to display your current reading progress from Goodreads using the Scriptable app on iOS. The widget shows the books you're currently reading on Goodreads, their progress, and the cover images in a ~~beautiful and minimalist~~ okayish-looking format.
 
-A simple widget designed to display your current reading progress from Goodreads using the Scriptable app on iOS. The widget shows the books you're currently reading, their percentage progress, and the cover images in a ~~beautiful and minimalist~~ format.
+[![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-As we all know, the Goodreads app SUCKS. That’s especially bad for me. 
+### Features and How it works
 
-### Background
-
-While I love the idea of Goodreads, I’ve always found it difficult to use it consistently. I’ll use it to track my reading (sparingly) for a few days, then forget about it for many many months (along with reading overall), and then suddenly fall into it again. Rinse and repeat.
-
-A part of it is just my laziness, but Goodreads is also kinda uninspiring, unless you are a consistent reader or (somehow) are into its social features. What I – no, *we* – need is to be blinded by our shame of pushing up reading and logging, shoved into submission to literature by capitalistic beast/owner Amazon every time we open our phones. 
-
+- Displays the covers of books you're currently reading (up to 3)
+- Shows your reading progress as a progress bar
+- Real-time updates (?) as you read more pages and books
+- Opens Goodreads app when clicked
 
 This project pulls data from a user’s Goodreads Recent Updates RSS feed, parses it, and displays it on a Scriptable widget for your iOS home screen.
 
 Because the “scraping” is based on RSS, it doesn’t even need to be your own current reading progress that it pulls. W-O-W! You can finally stalk random people’s book habits straight from your home screen, revolutionary! (for legal reasons that’s a joke lol)
 
-## Features
+### Background
+While I love the idea of Goodreads, I’ve always found it difficult to use it consistently. I’ll use it to track my reading (sparingly) for a few days, then forget about it for many many months (along with reading overall), and then suddenly fall into it again. Rinse, aaaand repeat.
 
-- Displays the books you're currently reading.
-- Shows your reading progress as a percentage.
-- Displays book cover images next to their titles.
-- Lightweight and easy to integrate with the Scriptable app on iOS.
-- Real-time updates as you read more books.
+Partly it’s just my laziness, but Goodreads is also kinda really uninspiring, except maybe if you are a consistent reader or (somehow) are into its social features. What I – no, *we* – need is to be blinded by our shame of pushing up reading and logging, shoved into submission to literature by capitalistic beast/owner Amazon every time we open our phones. Heh.
 
-## Requirements
-
-- [Scriptable app](https://apps.apple.com/us/app/scriptable/id1405459188) installed on your iPhone or iPad.
-	- *Note: it’s probably super possible to use something else, this is just what I felt worked for me.*
-- A Goodreads account (obviously).
+### To-do
+- [ ] clean up readme
+- [ ] test whether page-based progress even works, as opposed to percentage-based.
+- [ ] look into whether it’s possible to streamline opening Goodreads without opening Scriptable on the way.
+- [ ] look into adapting the code for the small and big widget sizes.
+- [ ] come back to developing an alternative, horizontal widget layout.
   
-## Setup
+## Beginner-friendly Setup
+I’m writing this with the utmost detail, just in case. If you’re on GitHub, you probably know how to do all of this already (and locally), but I’m tryna be comprehensive here. 
 
-### 1. Clone the Repository
+### 1 - Fork!
+0. Get a GitHub-account.
+1. [Fork.](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo?tool=webui#forking-a-repository)
 
-Clone the repository to your local machine:
+### 2 - Modify the Script
+In order to show *your own* Goodreads data (instead of mine</3), you need to update the script with your own Goodreads RSS feed URL.
 
-```bash
-git clone https://github.com/yourusername/goodreads-scriptable-widget.git
-cd goodreads-scriptable-widget
+1. Go to your Goodreads Profile. Scroll down to “[Your Name]’s Recent Updates. On the right is a button labelled `rss`. Right-click/Two-finger-click/Control-click/Whatever on it, and copy the link.
+
+2. Go to your newly forked copy of this project. Click on `index.js`. Click on the pen on the right of the screen to edit the file. Find this line, high up in the file:\
+\
+```
+const rssFeedUrl = 'https://www.goodreads.com/user/updates_rss/85977318?key=6oekI4LM4irGWk-h0td061HXzYEnTelG4NJtuPBJfhV91lfc';
+```
+\
+Replace my URL with the URL you just copied from Goodreads. Be sure to keep the quotes.
+
+3. Click on “Commit changes...” to save the file.
+
+Now you’ve basically prepared all the code needed to scrape your currently-reading. That was so easy!
+
+### 3 - The Vercel-part
+Now, if you were to have cloned your fork to your own computer, you could have navigated to it with the terminal, ran `node index.js`, opened `localhost:3000`, and be presented with a clump of confusing data. We do need that data, but in order to deliver it automatically to Scriptable, so that the widget works, we need to build a little bridge first. That bridge is *Vercel*. What Vercel does is that it *deploys* the code in your fork for you, so that the “clump of data” is prepped and gettable for your widget.
+
+Fortunately for you, I have done all of the preparatory architecting for this to work (*ugh back aches*). The only things you need to do is this:
+
+1. [Sign up for Vercel](https://vercel.com/signup) with your GitHub account.
+2. Go to your Overview, and click “Add new...” > Project.
+
+3. “Import” goodreads-scriptable-widget, and click “Deploy”.\
+\
+Note: If you ever update your RSS URL in ```index.js``` over in your fork on GitHub, you won’t have to worry about Vercel. Vercel re-deploys your project any time it is updated.
+
+4. The deploying will take a few seconds, but when it’s over, click “Continue to Dashboard”. Under “Domains” is a, well, domain. This is where you will point Scriptable to, in order for it to transform to a widget. So, note this down. 
+
+### 4 - The Scriptable-part
+Scriptable can be used for probably billions of things, but for us, it’s, as hinted, what actually interprets the mess scraped from Goodreads into a cute little widget.
+
+There isn’t a lot you’ll have to do here either, so just follow along!
+
+1. Install the [Scriptable app](https://apps.apple.com/us/app/scriptable/id1405459188) on your iOS device.
+
+2. Transfer ```goodreads-scriptable-widget.scriptable``` onto your iOS device. Click the file on the device, and click the “share”-button. Find and click the Scriptable icon to open it in Scriptable. Click “Add to my Scripts”.
+
+3. Now, scroll down all the way to the bottom, and find this code:\
+```javascript
+const url = "https://goodreads-scriptable-widget.vercel.app/currently-reading"   // Edit endpoint to "/testTwoItems" or "/testThreeItems" for visual testing
 ```
 
-### 2. Modify the Script
-In order to show your personal Goodreads data, you need to update the script with your Goodreads RSS feed URL.
+4. Replace ```”https://YOUR-DOMAIN.vercel.app”``` with your own domain from step 3.4. Do not replace ```”/currently-reading”```, as this is the location of the data.
 
-Go to your Goodreads account.
-Find your RSS feed URL by visiting your "Reading" page and grabbing the RSS feed URL (usually found in the settings).
-Replace ```YOUR_GOODREADS_RSS_FEED_URL``` in the index.js file with your personalised RSS URL (keeping the quotes):
-```
-const rssFeedUrl = 'YOUR_GOODREADS_RSS_FEED_URL';
-```
+### 5 - The Finale
+OOOOOO exciting!
 
-### 3. Deploy the Widget
-The widget is deployed on Vercel, making it accessible over the web and ensuring it works as expected.
+1. [Add the widget to your home screen.](https://support.apple.com/en-us/118610)
 
-Push the changes to GitHub and deploy your repository to Vercel using their simple deployment process. Vercel will automatically handle your deployment once you push the changes to GitHub.
-
-### 4. Set Up Scriptable Widget
-Open Scriptable on your iPhone or iPad.
-Create a new script and paste the contents of index.js into the new script.
-Save the script.
-Add a new widget to your home screen and link it to the script.
-
-### 5. Enjoy Your Goodreads Widget!
-Once the widget is deployed and the script is set up on your iPhone/iPad, you'll see the current reading progress and cover images directly on your home screen.
+2. Press and hold on the widget. Click “Edit Widget”. Click “Script”, and select “goodreads-scriptable-widget”. Click out of there, and admire the final product on your home screen!
 
 
+## Questions
 
+**How do I change the maximum number of books shown on the widget?**
 
-### Customisation Tips
+The default maximum books shown is 3. This means that there could be 3, 2, 1, or even 0 books shown on the widget, depending on how few books you’re currently reading.
 
-- **Change the Style**: Feel free to modify the script’s visual appearance. The widget can be further customised by changing the CSS or the way books are displayed.
-- **Multiple Widgets**: You can create multiple widgets for different reading statuses, such as books you've completed, books you're planning to read, etc.
+You may for whatever reason want to display fewer than 3. This won’t look as good visually, in my opinion. But to accomplish this, open the Scriptable script, and find this line of code, and swap the 3 for whatever number:
+
+  ```
+  // Change this number to control how many books to show at maximum
+  const maxBooks = Math.min(3, books.length)
+  ```
+
+(Note: I can almost promise that 4 will not look good in the least.)
   
   ---
 
-## Notes and Other stuff
+## Disclaimers and End-user heroism
 This project is provided as is. I don’t even really know what i’m doing here, so unfortunately I probably won’t be able to answer any questions. </3
 
 But feel free to play around with it and change it as much as you want! And if you know how to improve or streamline anything, lmk!
-
-### License
-This project is open-source and available under the MIT License. See LICENSE.txt for more.
