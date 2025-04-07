@@ -8,8 +8,12 @@
   ],
   "routes": [
     {
-      "src": "/books",
+      "src": "/currently-reading",
       "dest": "index.js"
+    },
+    {
+    	"src": "/testTwoItems",
+    	"dest": "index.js"
     },
     {
     	"src": "/testThreeItems",

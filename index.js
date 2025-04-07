@@ -79,7 +79,7 @@ async function processProgressItems() {
 }
 
 // Route to get books data
-app.get('/books', async (req, res) => {
+app.get('/currently-reading', async (req, res) => {
   try {
     const books = await processProgressItems();
     console.log('Fetched', books.length, 'items from RSS feed.');
@@ -91,6 +91,7 @@ app.get('/books', async (req, res) => {
 });
 
 // Route to return sample data for testing
+	// Three items
 app.get('/testThreeItems', async (req, res) => {
   const sampleBooks = [
     {
@@ -107,6 +108,24 @@ app.get('/testThreeItems', async (req, res) => {
       title: "To Kill a Mockingbird",
       progress: 88,
       coverImage: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361975680l/2657._SX150_.jpg",
+    }
+  ];
+
+  res.json(sampleBooks);
+});
+
+	// Two items
+app.get('/testTwoItems', async (req, res) => {
+  const sampleBooks = [
+    {
+      title: "The Great Gatsby",
+      progress: 72,
+      coverImage: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1650033243i/41733839._SX150_.jpg",
+    },
+    {
+      title: "1984",
+      progress: 54,
+      coverImage: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348990566l/5470._SX150_.jpg",
     }
   ];
 
