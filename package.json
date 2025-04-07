@@ -1,5 +1,5 @@
 {
-  "name": "goodreads-widget-2.0",
+  "name": "goodreads-scriptable-widget",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -13,9 +13,7 @@
   "dependencies": {
     "axios": "^1.8.4",
     "express": "^5.1.0",
-    "goodreads-bookshelf-api": "^1.0.0",
     "he": "^1.2.0",
-    "rss-parser": "^3.13.0",
     "xml2js": "^0.6.2"
   }
 }

@@ -1,4 +1,4 @@
-# Goodreads Widget 2.0
+# Goodreads Scriptable Widget
 
 A simple server to fetch books from the currently reading shelf on Goodreads, along with reading progress information from the Goodreads RSS feed.
 
@@ -6,10 +6,14 @@ A simple server to fetch books from the currently reading shelf on Goodreads, al
 
 1. Clone the repository
 2. Install dependencies:
-   ```bash
-      npm install```
+	```
+	bash
+	npm install
+	```
 2. Run the server:
-   ```node index.js```
+	```
+	node index.js
+	```
    
 ## Endpoint
 
