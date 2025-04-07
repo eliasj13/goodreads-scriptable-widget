@@ -12,12 +12,17 @@
       "dest": "index.js"
     },
     {
-    	"src": "/testTwoItems",
-    	"dest": "index.js"
+      "src": "/testTwoItems",
+      "dest": "index.js"
     },
     {
-    	"src": "/testThreeItems",
-    	"dest": "index.js"
+      "src": "/testThreeItems",
+      "dest": "index.js"
+    },
+    {
+      "src": "/",
+      "dest": "/currently-reading",
+      "status": 301
     }
   ]
 }
