@@ -1,11 +1,14 @@
 import express from 'express';
 import axios from 'axios';
 import { parseString } from 'xml2js';
-import he from 'he'; // HTML entity decoder
+import he from 'he';
 
 const app = express();
+
+// Default local port is 3000. Modify this number if you wanna change it.
 const port = 3000;
 
+// Replace this with your own Goodreads Updates URL. See README for information.
 const feedUrl = 'https://www.goodreads.com/user/updates_rss/85977318?key=6oekI4LM4irGWk-h0td061HXzYEnTelG4NJtuPBJfhV91lfc';
 
 // Function to fetch and parse the RSS feed
