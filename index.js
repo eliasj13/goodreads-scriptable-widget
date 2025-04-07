@@ -96,17 +96,17 @@ app.get('/testThree', async (req, res) => {
     {
       title: "The Great Gatsby",
       progress: 72,
-      coverImage: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1441913873l/4671._SX50_.jpg",
+      coverImage: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1650033243i/41733839._SX150_.jpg",
     },
     {
       title: "1984",
       progress: 54,
-      coverImage: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348990566l/5470._SX50_.jpg",
+      coverImage: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348990566l/5470._SX150_.jpg",
     },
     {
       title: "To Kill a Mockingbird",
       progress: 88,
-      coverImage: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361975680l/2657._SX50_.jpg",
+      coverImage: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361975680l/2657._SX150_.jpg",
     }
   ];
 
