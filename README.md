@@ -20,6 +20,7 @@ While I love the idea of Goodreads, I’ve always found it difficult to use it c
 Partly it’s just my laziness, but Goodreads is also kinda really uninspiring, except maybe if you are a consistent reader or (somehow) are into its social features. What I – no, *we* – need is to be blinded by our shame of pushing up reading and logging, shoved into submission to literature by capitalistic beast/owner Amazon every time we open our phones. Heh.
 
 ### To-do
+- [ ] switch out sample json books
 - [ ] clean up readme
 - [ ] test whether page-based progress even works, as opposed to percentage-based.
 - [ ] look into whether it’s possible to streamline opening Goodreads without opening Scriptable on the way.
