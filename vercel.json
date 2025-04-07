@@ -11,5 +11,9 @@
       "src": "/books",
       "dest": "index.js"
     }
+    {
+    	"src": "/testThree",
+    	"dest": "index.js"
+    }
   ]
 }
