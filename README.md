@@ -22,6 +22,7 @@ Partly it’s just my laziness, but Goodreads is also kinda really uninspiring, 
 ### To-do
 - [ ] switch out sample json books
 - [ ] clean up readme
+- [ ] add images to readme head
 - [ ] test whether page-based progress even works, as opposed to percentage-based.
 - [ ] look into whether it’s possible to streamline opening Goodreads without opening Scriptable on the way.
 - [ ] look into adapting the code for the small and big widget sizes.
@@ -39,13 +40,11 @@ In order to show *your own* Goodreads data (instead of mine</3), you need to upd
 
 1. Go to your Goodreads Profile. Scroll down to “[Your Name]’s Recent Updates. On the right is a button labelled `rss`. Right-click/Two-finger-click/Control-click/Whatever on it, and copy the link.
 
-2. Go to your newly forked copy of this project. Click on `index.js`. Click on the pen on the right of the screen to edit the file. Find this line, high up in the file:\
-\
-```
+2. Go to your newly forked copy of this project. Click on `index.js`. Click on the pen on the right of the screen to edit the file. Find this line, high up in the file, and replace my URL with the URL you just copied from Goodreads (be sure to keep the quotes):
+
+```javascript
 const rssFeedUrl = 'https://www.goodreads.com/user/updates_rss/85977318?key=6oekI4LM4irGWk-h0td061HXzYEnTelG4NJtuPBJfhV91lfc';
 ```
-\
-Replace my URL with the URL you just copied from Goodreads. Be sure to keep the quotes.
 
 3. Click on “Commit changes...” to save the file.
 
@@ -74,7 +73,8 @@ There isn’t a lot you’ll have to do here either, so just follow along!
 
 2. Transfer ```goodreads-scriptable-widget.scriptable``` onto your iOS device. Click the file on the device, and click the “share”-button. Find and click the Scriptable icon to open it in Scriptable. Click “Add to my Scripts”.
 
-3. Now, scroll down all the way to the bottom, and find this code:\
+3. Now, scroll down all the way to the bottom, and find this code:
+
 ```javascript
 const url = "https://goodreads-scriptable-widget.vercel.app/currently-reading"   // Edit endpoint to "/testTwoItems" or "/testThreeItems" for visual testing
 ```
@@ -88,6 +88,7 @@ OOOOOO exciting!
 
 2. Press and hold on the widget. Click “Edit Widget”. Click “Script”, and select “goodreads-scriptable-widget”. Click out of there, and admire the final product on your home screen!
 
+---
 
 ## Questions
 
@@ -97,14 +98,14 @@ The default maximum books shown is 3. This means that there could be 3, 2, 1, or
 
 You may for whatever reason want to display fewer than 3. This won’t look as good visually, in my opinion. But to accomplish this, open the Scriptable script, and find this line of code, and swap the 3 for whatever number:
 
-  ```
+  ```javascript
   // Change this number to control how many books to show at maximum
   const maxBooks = Math.min(3, books.length)
   ```
 
 (Note: I can almost promise that 4 will not look good in the least.)
   
-  ---
+---
 
 ## Disclaimers and End-user heroism
 This project is provided as is. I don’t even really know what i’m doing here, so unfortunately I probably won’t be able to answer any questions. </3
