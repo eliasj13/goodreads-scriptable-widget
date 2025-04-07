@@ -90,6 +90,30 @@ app.get('/books', async (req, res) => {
   }
 });
 
+// Sample books for testing
+const sampleBooks = [
+  {
+    title: "The Great Gatsby",
+    progress: 72,
+    coverImage: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1441913873l/4671._SX50_.jpg",
+  },
+  {
+    title: "1984",
+    progress: 54,
+    coverImage: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348990566l/5470._SX50_.jpg",
+  },
+  {
+    title: "To Kill a Mockingbird",
+    progress: 88,
+    coverImage: "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361975680l/2657._SX50_.jpg",
+  }
+];
+
+// Route to get sample books for testing
+app.get('/testThree', (req, res) => {
+  res.json(sampleBooks);
+});
+
 app.listen(port, () => {
   console.log(`📚 Server running at http://localhost:${port}`);
 });

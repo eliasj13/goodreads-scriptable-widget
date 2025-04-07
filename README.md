@@ -45,8 +45,10 @@ In order to show your personal Goodreads data, you need to update the script wit
 
 Go to your Goodreads account.
 Find your RSS feed URL by visiting your "Reading" page and grabbing the RSS feed URL (usually found in the settings).
-Replace the rssFeedUrl in the index.js file with your personalised RSS URL.
+Replace ```YOUR_GOODREADS_RSS_FEED_URL``` in the index.js file with your personalised RSS URL (keeping the quotes):
+```
 const rssFeedUrl = 'YOUR_GOODREADS_RSS_FEED_URL';
+```
 
 ### 3. Deploy the Widget
 The widget is deployed on Vercel, making it accessible over the web and ensuring it works as expected.
