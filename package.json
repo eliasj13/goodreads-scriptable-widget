@@ -1,0 +1,17 @@
+{
+  "name": "goodreads-widget-2.0",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0",
+    "goodreads-bookshelf-api": "^1.0.0",
+    "rss-parser": "^3.13.0"
+  }
+}
