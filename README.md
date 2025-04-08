@@ -78,9 +78,9 @@ There isn’t a lot you’ll have to do here either, so just follow along!
 
 1. Install the [Scriptable app](https://apps.apple.com/us/app/scriptable/id1405459188) on your iOS device.
 
-2. Transfer ```goodreads-scriptable-widget.scriptable```[^note] onto your iOS device. Click the file on the device, and click the “share”-button. Find and click the Scriptable icon to open it in Scriptable. Click “Add to my Scripts”.
+2. Transfer ```goodreads-scriptable-widget.scriptable```[^1] onto your iOS device. Click the file on the device, and click the “share”-button. Find and click the Scriptable icon to open it in Scriptable. Click “Add to my Scripts”.
 
-[^note]: There’s also the file ```goodreads-scriptable-widget.js```. This is mainly for if you just wanna view the same code outside of the Scriptable app.
+[^1]: There’s also the file ```goodreads-scriptable-widget.js```. This is mainly for if you just wanna view the same code outside of the Scriptable app.
 
 3. Now, scroll down all the way to the bottom, and find this code:
 
@@ -104,16 +104,17 @@ OOOOOO exciting!
 
 **Q - How do I change the maximum number of books shown on the widget?**
 
-The default maximum books shown is 3. This means that there could be 3, 2, 1, or even 0 books shown on the widget, depending on how few books you’re currently reading.
+The default maximum number of books shown is 3. This means that there could be 3, 2, 1, or even 0 books shown on the widget, depending on how few books you’re currently reading.
 
 You may for whatever reason want to display fewer than 3. This won’t look as good visually, in my opinion. But to accomplish this, open the Scriptable script, and find this line of code, and swap the 3 for whatever number:
 
 ```javascript
 // Change this number to control how many books to show at maximum
 const maxBooks = Math.min(3, books.length)
+                          ↑
 ```
 
-(Note: I can almost promise that ```4``` (or – god forbid – more) will not look good in the least.)
+(Note: I can almost promise that `4` (or – god forbid – more) will not look good in the least.)
 
 **Q - Can I test what the widget looks like on my home screen before I do all this work?**
 
