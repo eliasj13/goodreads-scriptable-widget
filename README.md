@@ -9,6 +9,7 @@ A super simple widget designed to display your current reading progress from Goo
 - Displays the covers of books you're currently reading (up to 3)
 - Shows your reading progress as a progress bar
 - Opens Goodreads app when clicked (unfortunately not without briefly opening Scriptable on the way :/)
+- Dark mode support
 
 This project pulls data from a user’s Goodreads Recent Updates RSS feed, parses it, and displays it on a Scriptable widget for your iOS home screen.
 
