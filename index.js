@@ -67,7 +67,7 @@ async function processProgressItems() {
         const progress = parseInt(titleMatch[1], 10);
         const title = titleMatch[2].trim();
         const rawCover = coverMatch[1];
-        const coverImage = rawCover.replace(/\._S[XY]\d+_/, "._SX200_"); // Update cover size
+        const coverImage = rawCover.replace(/\._S[XY]\d+_/, "._SX150_"); // Update cover size
 
         return {
           title,
@@ -101,22 +101,22 @@ app.get("/currently-reading", async (req, res) => {
 app.get("/testThreeItems", async (req, res) => {
   const sampleBooks = [
     {
-      title: "The Great Gatsby",
-      progress: 72,
+      title: "Sunrise on the Reaping",
+      progress: 61,
       coverImage:
-        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1650033243i/41733839._SX150_.jpg",
+        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1729090282l/214333691._SX150_.jpg",
     },
     {
-      title: "1984",
-      progress: 54,
+      title: "King Leopold's Ghost",
+      progress: 55,
       coverImage:
-        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348990566l/5470._SX150_.jpg",
+        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1597371787l/54916423._SX150_.jpg",
     },
     {
-      title: "To Kill a Mockingbird",
-      progress: 88,
+      title: "Swimming in the Dark",
+      progress: 38,
       coverImage:
-        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1361975680l/2657._SX150_.jpg",
+        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610434755l/54496088._SX150_.jpg",
     },
   ];
 
@@ -127,16 +127,16 @@ app.get("/testThreeItems", async (req, res) => {
 app.get("/testTwoItems", async (req, res) => {
   const sampleBooks = [
     {
-      title: "The Great Gatsby",
-      progress: 72,
+      title: "King Leopold's Ghost",
+      progress: 55,
       coverImage:
-        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1650033243i/41733839._SX150_.jpg",
+        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1597371787l/54916423._SX150_.jpg",
     },
     {
-      title: "1984",
-      progress: 54,
+      title: "Swimming in the Dark",
+      progress: 38,
       coverImage:
-        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1348990566l/5470._SX150_.jpg",
+        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610434755l/54496088._SX150_.jpg",
     },
   ];
 
