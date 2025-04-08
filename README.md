@@ -57,16 +57,16 @@ Now you’ve basically prepared all the code needed to scrape your currently-rea
 
 ### 3 - The Vercel-part
 
-Now, if you were to have cloned your fork to your own computer, you could have navigated to it with the terminal, ran ```node index.js```, opened ```localhost:3000```, and be presented with a clump of confusing data. We do need that data, but in order to deliver it automatically to Scriptable, so that the widget works, we need to build a little bridge first. That bridge is _Vercel_. What Vercel does is that it _deploys_ the code in your fork for you, so that the “clump of data” is prepped and gettable for your widget.
+Now, if you were to have cloned your fork to your own computer, you could have navigated to it with the terminal, ran ```node index.js```, opened ```localhost:3000```, and be presented with a clump of confusing data. We do need that data, but in order to deliver it automatically to Scriptable, so that the widget works, we need to build a little bridge first. That bridge is _Vercel_. What Vercel does is that it _deploys_ the code in your fork for you, so that the “clump of data” is prepped and gettable for your widget. That also means that you won't need to run anything on your own computer.
 
 Fortunately for you, I have done all of the preparatory architecting for this to work (_ugh back aches_). The only things you need to do is this:
 
 1. [Sign up to Vercel](https://vercel.com/signup) with your GitHub account.
 2. Go to your Overview, and click “Add new...” > Project.
 
-3. “Import” goodreads-scriptable-widget, and click “Deploy”.\
-   \
-   Note: If you ever update your RSS URL in ```index.js``` over in your fork on GitHub, you won’t have to worry about Vercel. Vercel re-deploys your project any time it is updated.
+3. “Import” goodreads-scriptable-widget, and click “Deploy”.
+
+   > Note: If you ever update your RSS URL in ```index.js``` over in your fork on GitHub, you won’t have to worry about Vercel. Vercel re-deploys your project any time it is updated.
 
 4. The deploying will take a few seconds, but when it’s over, click “Continue to Dashboard”. Under “Domains” is a, well, domain. This is where you will point Scriptable to, in order for it to transform to a widget. So, note this down.
 
