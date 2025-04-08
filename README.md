@@ -1,6 +1,6 @@
 # Goodreads Scriptable Widget
 
-A super simple widget designed to display your current reading progress from Goodreads using the Scriptable app on iOS. The widget shows the books you're currently reading on Goodreads, their progress, and the cover images in a ~~beautiful and minimalist~~ okayish-looking format.
+A super simple widget designed to display your current reading progress from Goodreads using the Scriptable app on iOS. The widget shows the books you're currently reading on Goodreads, their progress, and the cover images in a ~~beautiful and minimalist~~ _okayish_-looking format.
 
 [![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -8,12 +8,11 @@ A super simple widget designed to display your current reading progress from Goo
 
 - Displays the covers of books you're currently reading (up to 3)
 - Shows your reading progress as a progress bar
-- Real-time updates (?) as you read more pages and books
 - Opens Goodreads app when clicked
 
 This project pulls data from a user’s Goodreads Recent Updates RSS feed, parses it, and displays it on a Scriptable widget for your iOS home screen.
 
-Because the “scraping” is based on RSS, it doesn’t even need to be your own current reading progress that it pulls. W-O-W! You can finally stalk random people’s book habits straight from your home screen, revolutionary! (for legal reasons that’s a joke lol)
+Because the “scraping” is based on RSS, it doesn’t even need to be your own current reading progress that it pulls. W-O-W! You can finally stalk random people’s book habits straight from your home screen! (for legal reasons that’s a joke lol)
 
 ### Background
 
@@ -24,7 +23,6 @@ Partly it’s just my laziness, but Goodreads is also kinda really uninspiring, 
 ### To-do
 
 - [ ] switch out sample json books
-- [ ] clean up readme
 - [ ] add images to readme head
 - [ ] test whether page-based progress even works, as opposed to percentage-based.
 - [ ] look into whether it’s possible to streamline opening Goodreads without opening Scriptable on the way.
@@ -85,7 +83,7 @@ There isn’t a lot you’ll have to do here either, so just follow along!
 3. Now, scroll down all the way to the bottom, and find this code:
 
 ```javascript
-const url = "https://goodreads-scriptable-widget.vercel.app/currently-reading"; // Edit endpoint to "/testTwoItems" or "/testThreeItems" for visual testing
+const url = "https://YOUR-DOMAIN.vercel.app/currently-reading"; // Edit endpoint to "/testTwoItems" or "/testThreeItems" for visual testing
 ```
 
 4. Replace ```https://YOUR-DOMAIN.vercel.app``` with your own domain from step 3.4. Do not replace ```/currently-reading```, as this is the location of the data.
@@ -114,6 +112,14 @@ const maxBooks = Math.min(3, books.length)
 ```
 
 (Note: I can almost promise that ```4``` will not look good in the least.)
+
+**Can I test what the widget looks like on my home screen before I do all this work?**
+
+Absolutely!
+
+In that case, skip sections 1-3, straight to section 4 - "The Scriptable-part". Perform steps 1-3 normally. Instead of following step 4, replace ```YOUR-DOMAIN``` with ```goodreads-scriptable-widget```, and ```\currently-reading``` with ```/testThreeItems``` (or maybe ```/testTwoItems```).
+
+Ta-da!
 
 ---
 
