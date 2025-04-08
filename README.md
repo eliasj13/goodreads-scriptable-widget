@@ -6,7 +6,7 @@ A super simple widget designed to display your current reading progress from Goo
 
 ### Features and How it works
 
-- Displays the covers of books you're currently reading (up to 3)
+- Displays the covers of books you're currently reading (up to ~~3~~ 2)
 - Shows your reading progress as a progress bar
 - Opens Goodreads app when clicked (unfortunately not without briefly opening Scriptable on the way :/)
 - Dark mode support
@@ -21,14 +21,26 @@ While I love the idea of Goodreads, I’ve always found it difficult to use it c
 
 Partly it’s just my laziness, but Goodreads is also kinda really uninspiring, except maybe if you are a consistent reader or (somehow) are into its social features. What I – no, _we_ – need is to be blinded by our shame of pushing up reading and logging, shoved into submission to literature by capitalistic beast/owner Amazon every time we open our phones. Heh.
 
+### Note
+
+My vision was always to be able to have three books side by side in the medium-format widget. Through my limited testing, I have unfortunately concluded that Goodreads's Recent Updates RSS feed (and it's regular presence on the website and in the app) only keeps track of the two most recent progress updates. This (_i guess..._) makes sense from a spam-prevention perspective (but also not, cos people be literally spamming books onto their TBRs. _sigh_.), but it's kinda pissy from a me-and-this-project perspective :(.
+
+Previously I've looked into the possibility of scraping from the HTML widgets Goodreads themselves offer. While they can show however many items you want, and however much personal and meta data you want, they do _not_ include your progress. This is, I believe, because they are basically just feeds of whatever list, and lists don't show reading progress.
+
+I really don't know if there is a simple solution to this. Possibly I could include something that caches(?) the RSS data on Vercel to make up for it. But, alas, that is beyond me, and I frankly couldn't really give that much of a shit anyways.
+
+I might _potentially, possibly, maybe (björk ref yass)_ look into scraping whatever React app that the Goodreads homepage uses for reading progress ("Currently reading" on the left), but that probably involves some cookie stuff, which might make expirations inevitable. Also a lot of work.
+
+Point is, I may or may not work on this. The project right now is all-in-all pretty okay, even though I don't love this limitation. In the end _it works_—not in the exact way I would like it, and with some bumps, but _it works_.
+
 ### To-do
 
-- [ ] switch out sample json books
-- [ ] add images to readme head
+- [ ] solve RSS only getting the 2 most recently updated books.
+- [ ] add images to readme head.
 - [ ] test whether page-based progress even works, as opposed to percentage-based.
 - [ ] look into whether it’s possible to streamline opening Goodreads without opening Scriptable on the way.
-- [ ] look into adapting the code for the small and big widget sizes.
-- [ ] come back to developing an alternative, horizontal widget layout.
+- [ ] develop an alternative, horizontal widget layout.
+[- [ ] look into adapting the code for the small and big widget sizes.]: #
 
 ## Beginner-friendly Setup
 
@@ -49,7 +61,7 @@ In order to show _your own_ Goodreads data (instead of mine</3), you need to upd
 
 ```javascript
 const rssFeedUrl =
-  "https://www.goodreads.com/user/updates_rss/85977318?key=6oekI4LM4irGWk-h0td061HXzYEnTelG4NJtuPBJfhV91lfc";
+  "https://www.goodreads.com/user/updates_rss/85977318";
 ```
 
 3. Click on “Commit changes...” to save the file.
@@ -103,6 +115,7 @@ OOOOOO exciting!
 
 ## Questions
 
+  [
 **Q - How do I change the maximum number of books shown on the widget?**
 
 The default maximum number of books shown is 3. This means that there could be 3, 2, 1, or even 0 books shown on the widget, depending on how few books you’re currently reading.
@@ -116,6 +129,8 @@ const maxBooks = Math.min(3, books.length)
 ```
 
 (Note: I can almost promise that `4` (or – god forbid – more) will not look good in the least.)
+
+  ]: #
 
 **Q - Can I test what the widget looks like on my home screen before I do all this work?**
 
