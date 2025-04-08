@@ -67,7 +67,7 @@ async function processProgressItems() {
         const progress = parseInt(titleMatch[1], 10);
         const title = titleMatch[2].trim();
         const rawCover = coverMatch[1];
-        const coverImage = rawCover.replace(/\._S[XY]\d+_/, "._SX150_"); // Update cover size
+        const coverImage = rawCover.replace(/\._S[XY]\d+_/, "._SX180_"); // Update cover size
 
         return {
           title,
@@ -104,19 +104,19 @@ app.get("/testThreeItems", async (req, res) => {
       title: "Sunrise on the Reaping",
       progress: 61,
       coverImage:
-        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1729090282l/214333691._SX150_.jpg",
+        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1729090282l/214333691._SX180_.jpg",
     },
     {
       title: "King Leopold's Ghost",
       progress: 55,
       coverImage:
-        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1597371787l/54916423._SX150_.jpg",
+        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1597371787l/54916423._SX180_.jpg",
     },
     {
       title: "Swimming in the Dark",
       progress: 38,
       coverImage:
-        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610434755l/54496088._SX150_.jpg",
+        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610434755l/54496088._SX180_.jpg",
     },
   ];
 
@@ -130,13 +130,13 @@ app.get("/testTwoItems", async (req, res) => {
       title: "King Leopold's Ghost",
       progress: 55,
       coverImage:
-        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1597371787l/54916423._SX150_.jpg",
+        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1597371787l/54916423._SX180_.jpg",
     },
     {
       title: "Swimming in the Dark",
       progress: 38,
       coverImage:
-        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610434755l/54496088._SX150_.jpg",
+        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1610434755l/54496088._SX180_.jpg",
     },
   ];
 
