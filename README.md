@@ -78,7 +78,9 @@ There isn’t a lot you’ll have to do here either, so just follow along!
 
 1. Install the [Scriptable app](https://apps.apple.com/us/app/scriptable/id1405459188) on your iOS device.
 
-2. Transfer ```goodreads-scriptable-widget.scriptable```[^There’s also the file ```goodreads-scriptable-widget.js```. This is mainly for if you just wanna view the same code outside of the Scriptable app.] onto your iOS device. Click the file on the device, and click the “share”-button. Find and click the Scriptable icon to open it in Scriptable. Click “Add to my Scripts”.
+2. Transfer ```goodreads-scriptable-widget.scriptable```[^1] onto your iOS device. Click the file on the device, and click the “share”-button. Find and click the Scriptable icon to open it in Scriptable. Click “Add to my Scripts”.
+
+[^1 ]: There’s also the file ```goodreads-scriptable-widget.js```. This is mainly for if you just wanna view the same code outside of the Scriptable app.
 
 3. Now, scroll down all the way to the bottom, and find this code:
 
