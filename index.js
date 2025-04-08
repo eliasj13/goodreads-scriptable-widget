@@ -110,7 +110,7 @@ app.get("/testThreeItems", async (req, res) => {
       title: "King Leopold's Ghost",
       progress: 55,
       coverImage:
-        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1597371787l/54916423._SX180_.jpg",
+        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328315558i/10474352._SX180_.jpg",
     },
     {
       title: "Swimming in the Dark",
@@ -130,7 +130,7 @@ app.get("/testTwoItems", async (req, res) => {
       title: "King Leopold's Ghost",
       progress: 55,
       coverImage:
-        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1597371787l/54916423._SX180_.jpg",
+        "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1328315558i/10474352._SX180_.jpg",
     },
     {
       title: "Swimming in the Dark",
