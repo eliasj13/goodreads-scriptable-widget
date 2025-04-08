@@ -102,7 +102,7 @@ OOOOOO exciting!
 
 ## Questions
 
-**How do I change the maximum number of books shown on the widget?**
+**Q - How do I change the maximum number of books shown on the widget?**
 
 The default maximum books shown is 3. This means that there could be 3, 2, 1, or even 0 books shown on the widget, depending on how few books you’re currently reading.
 
@@ -113,9 +113,9 @@ You may for whatever reason want to display fewer than 3. This won’t look as g
 const maxBooks = Math.min(3, books.length)
 ```
 
-(Note: I can almost promise that ```4``` will not look good in the least.)
+(Note: I can almost promise that ```4``` (or – god forbid – more) will not look good in the least.)
 
-**Can I test what the widget looks like on my home screen before I do all this work?**
+**Q - Can I test what the widget looks like on my home screen before I do all this work?**
 
 Absolutely!
 
@@ -123,10 +123,10 @@ In that case, skip sections 1-3, straight to section 4 - "The Scriptable-part". 
 
 Ta-da!
 
----
-
 ## Disclaimers and End-user heroism
 
 This project is provided as is. I don’t even really know what i’m doing here, so unfortunately I probably won’t be able to answer any questions. </3
 
 But feel free to play around with it and change it as much as you want! And if you know how to improve or streamline anything, lmk!
+
+## Footnotes
